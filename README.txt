@@ -1,0 +1,1 @@
+Thay DAN_LINK_APPS_SCRIPT_O_DAY trong script.js bằng URL Web App Apps Script của bạn.
