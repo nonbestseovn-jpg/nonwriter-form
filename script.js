@@ -1,4 +1,4 @@
-const SCRIPT_URL='https://script.google.com/macros/s/AKfycbzo_a5kwljUo_YaRJHYfBua55IinUgFBuwF0T6mheIPArzD6aIpyhHeYd8ubvOHxLyv/exec';
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbxR2d-ICiOh3SoMkglZOf8dk_N0_tkNhKgeAfkpHUB1OO3jzWrfU2_febWcjn41-Aqq/exec';
 document.getElementById('f').addEventListener('submit',async e=>{
 e.preventDefault();
 const data={name:name.value,phone:phone.value,website:website.value,service:service.value,message:message.value};
