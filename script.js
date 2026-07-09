@@ -1,33 +1,49 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxR2d-ICiOh3SoMkglZOf8dk_N0_tkNhKgeAfkpHUB1OO3jzWrfU2_febWcjn41-Aqq/exec";
+const SCRIPT_URL = "DÁN_URL_EXEC_MỚI_VÀO_ĐÂY";
 
-document.getElementById("f").addEventListener("submit", async (e) => {
-  e.preventDefault();
+const form = document.getElementById("f");
 
-  const data = {
-    name: document.getElementById("name").value,
-    phone: document.getElementById("phone").value,
-    website: document.getElementById("website").value,
-    service: document.getElementById("service").value,
-    message: document.getElementById("message").value
-  };
+form.addEventListener("submit", async function (e) {
 
-  try {
-    const response = await fetch(SCRIPT_URL, {
-      method: "POST",
-      redirect: "follow",
-     headers:{
-  'Content-Type':'text/plain'
-}
-      body: JSON.stringify(data)
-    });
+    e.preventDefault();
 
-    console.log(response);
+    const data = {
+        name: document.getElementById("name").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        website: document.getElementById("website").value.trim(),
+        service: document.getElementById("service").value.trim(),
+        message: document.getElementById("message").value.trim()
+    };
 
-    alert("Đã gửi thành công!");
-    document.getElementById("f").reset();
+    try {
 
-  } catch (error) {
-    console.error(error);
-    alert("Không gửi được dữ liệu.");
-  }
+        const res = await fetch(SCRIPT_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+
+        if(result.success){
+
+            alert("Đăng ký thành công!");
+
+            form.reset();
+
+        }else{
+
+            alert(result.error);
+
+        }
+
+    } catch (err) {
+
+        console.log(err);
+
+        alert("Không kết nối được Apps Script");
+
+    }
+
 });
