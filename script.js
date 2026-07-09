@@ -15,9 +15,9 @@ document.getElementById("f").addEventListener("submit", async (e) => {
     const response = await fetch(SCRIPT_URL, {
       method: "POST",
       redirect: "follow",
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8"
-      },
+      headers:{
+   "Content-Type":"application/json"
+}
       body: JSON.stringify(data)
     });
 
