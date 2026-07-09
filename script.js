@@ -1,4 +1,4 @@
-const SCRIPT_URL = "DÁN_URL_EXEC_MỚI_VÀO_ĐÂY";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyWdXGw5bJQOwh-QA9vUA6DN7D_fsnU5Sb5a8HFaBHb1n12WL3_J9siYlk93sGt7Xjc/exec";
 
 const form = document.getElementById("f");
 
