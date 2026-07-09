@@ -15,8 +15,8 @@ document.getElementById("f").addEventListener("submit", async (e) => {
     const response = await fetch(SCRIPT_URL, {
       method: "POST",
       redirect: "follow",
-      headers:{
-   "Content-Type":"application/json"
+     headers:{
+  'Content-Type':'text/plain'
 }
       body: JSON.stringify(data)
     });
